@@ -1,0 +1,78 @@
+﻿@page "/blocking"
+@inject PresetService PresetService
+
+<div class="blocking-page">
+    <!-- Page header (like Home) -->
+    <div class="hero">
+        <h1 class="h1">Blocking</h1>
+        <p class="subhead">
+            Turn categories on/off, or add custom sites to block.
+        </p>
+    </div>
+
+    <!-- Two cards, side-by-side -->
+    <div class="blocking-grid">
+        <!-- LEFT: Categories -->
+        <section class="card card-pad blocking-card">
+            <div class="card-top">
+                <div>
+                    <h2 class="section-title">Categories</h2>
+                    <div class="muted">Loaded @_categoryCount categories</div>
+                </div>
+            </div>
+
+            <div class="category-list">
+                @if (_presets?.Categories != null)
+                {
+                    @foreach (var keyValuePair in _presets.Categories)
+                    {
+                        var name = keyValuePair.Key;
+                        var cat = keyValuePair.Value;
+
+                        <div class="category-row">
+                            <div class="category-name">@name</div>
+
+                            <!-- your existing toggle UI goes here -->
+                            <label class="switch">
+                                <input type="checkbox" @bind="cat.Enabled" />
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    }
+                }
+            </div>
+        </section>
+
+        <!-- RIGHT: Custom -->
+        <section class="card card-pad blocking-card">
+            <div class="card-top">
+                <div>
+                    <h2 class="section-title">Custom Sites</h2>
+                    <div class="muted">Coming soon.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    private PresetsRoot? _presets;
+    private int _categoryCount;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _presets = await PresetService.LoadAsync();
+        _categoryCount = _presets?.Categories?.Count ?? 0;
+    }
+
+    private async Task ToggleCategoryAsync(string name)
+    {
+        if (_presets is null) return;
+        if (!_presets.Categories.TryGetValue(name, out var cat))
+            return;
+
+        cat.Enabled = !cat.Enabled;
+
+        await PresetService.SaveAsync(_presets); // Keep the Change so it stays after restart
+    }
+}

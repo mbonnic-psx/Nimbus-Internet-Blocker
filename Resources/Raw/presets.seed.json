@@ -1,0 +1,158 @@
+{
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ],
+
+  "categories": {
+
+    "Adult": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "pornhub.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "www.pornhub.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "AI": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.grok.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "grok.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Gambling": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.draftkings.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "draftkings.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Gaming": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.coolmathgames.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "coolmathgames.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Messanger": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.telegram.org",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "telegram.org",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "News": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.cnn.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "cnn.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Shopping": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.amazon.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "amazon.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Social": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.facebook.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "facebook.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    },
+
+    "Streaming": {
+      "enabled": false,
+      "entries": [
+        {
+          "host": "www.youtube.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        },
+        {
+          "host": "youtube.com",
+          "ipv4": "0.0.0.0",
+          "ipv6": "::"
+        }
+      ]
+    }
+
+  }
+}
