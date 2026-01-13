@@ -83,7 +83,7 @@ namespace Nimbus_Internet_Blocker.Services
                     return new PresetsRoot();
                 }
 
-                NormailizePresets(root); // Clean up bad or missing vaules so the UI and Apply step are safer
+                NormalizePresets(root); // Clean up bad or missing vaules so the UI and Apply step are safer
 
                 return root ?? new PresetsRoot();
             }
@@ -106,18 +106,18 @@ namespace Nimbus_Internet_Blocker.Services
             {
                 string livePath = GetLivePath();
 
-                NormailizePresets(root); // Clean the file befire saving
+                NormalizePresets(root); // Clean the file befire saving
 
                 var json = JsonSerializer.Serialize(root, new JsonSerializerOptions { WriteIndented = true}); // Turn the model back into Json and save
                 await File.WriteAllTextAsync(livePath, json);
             }
             catch(Exception ex)
             {
-                Debug.WriteLine($"PresetService.Saveasync has failed: {ex}");
+                Debug.WriteLine(message: $"PresetService.SaveAsync has failed: {ex}");
             }
         }
 
-        public void NormailizePresets(PresetsRoot root)
+        public void NormalizePresets(PresetsRoot root)
         {
             if (root.Categories == null)
             {
@@ -178,7 +178,7 @@ namespace Nimbus_Internet_Blocker.Services
 
             var s = input.Trim();
 
-            s = Regex.Replace(s, @"^\s*https?://", "", RegexOptions.IgnoreCase); // strip shceme if pasted as a URL
+            s = Regex.Replace(s, @"^\s*https?://", "", RegexOptions.IgnoreCase); // strip scheme if pasted as a URL
 
             var slash = s.IndexOf('/');
             if (slash >= 0) s = s[..slash]; //cut off path/query/fragment

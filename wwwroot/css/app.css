@@ -595,3 +595,16 @@ body {
         min-height: unset;
     }
 }
+
+.custom-add {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.custom-dropdown {
+    margin-top: 14px;
+    display: grid;
+    gap: 10px;
+}

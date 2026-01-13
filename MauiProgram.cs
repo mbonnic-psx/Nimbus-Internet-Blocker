@@ -24,6 +24,7 @@ namespace Nimbus_Internet_Blocker
             builder.Services.AddSingleton<ISnackbarService, SnackbarService>();
             builder.Services.AddSingleton<QuoteService>();
             builder.Services.AddSingleton<PresetService>();
+            builder.Services.AddSingleton<CustomSitesService>();
             return builder.Build();
         }
     }

@@ -10,13 +10,13 @@ namespace Nimbus_Internet_Blocker.Models
     public sealed class CustomsRoot
     {
         [JsonPropertyName("sites")]
-        public List<string> Sites { get; set; } = new();
+        public List<CustomEntry> Sites { get; set; } = new();
     }
 
     public sealed class CustomEntry
     {
         [JsonPropertyName("enabled")]
-        public bool Enabled { get; set; }
+        public bool? Enabled { get; set; }
 
         [JsonPropertyName("host")]
         public string Host { get; set; } = "";
